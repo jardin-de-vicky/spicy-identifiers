@@ -408,27 +408,12 @@ class DynamicIdentifier implements DynamicIdentifierInterface
         return $this;
     }
 
-    /**
-     * Using array access, get the identifier part at the specified position
-     *
-     * @param int $offset The position of the identifier part to get
-     *
-     * @return string The identifier part string
-     */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->part($offset);
     }
 
-    /**
-     * Using array access, set the identifier part at the specified position
-     *
-     * @param int|null $offset The position to set the identifer part at
-     * @param string   $part   The value of the identifier part to set
-     *
-     * @return void
-     */
-    public function offsetSet($offset, $part)
+    public function offsetSet(mixed $offset, mixed $part): void
     {
         if ($offset === null) {
             $this->append($part);
@@ -437,26 +422,12 @@ class DynamicIdentifier implements DynamicIdentifierInterface
         $this->replace($offset, $part);
     }
 
-    /**
-     * Using array access, determine if a part exists at the specified position
-     *
-     * @param mixed $offset The position to check
-     *
-     * @return bool True if a part exists at the specified position
-     */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): mixed
     {
         return $this->has($offset);
     }
 
-    /**
-     * Using array access, remove the identifier part at the specified position
-     *
-     * @param int $offset The position to remove an identifier part from
-     *
-     * @return void
-     */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         $this->remove($offset);
     }
