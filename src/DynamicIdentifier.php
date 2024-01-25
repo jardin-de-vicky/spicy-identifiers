@@ -440,7 +440,7 @@ class DynamicIdentifier implements DynamicIdentifierInterface
     /**
      * Using array access, determine if a part exists at the specified position
      *
-     * @param int $offset The position to check
+     * @param mixed $offset The position to check
      *
      * @return bool True if a part exists at the specified position
      */
