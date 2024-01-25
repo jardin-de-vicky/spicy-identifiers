@@ -422,7 +422,7 @@ class DynamicIdentifier implements DynamicIdentifierInterface
         $this->replace($offset, $part);
     }
 
-    public function offsetExists(mixed $offset): mixed
+    public function offsetExists(mixed $offset): bool
     {
         return $this->has($offset);
     }
@@ -432,12 +432,7 @@ class DynamicIdentifier implements DynamicIdentifierInterface
         $this->remove($offset);
     }
 
-    /**
-     * Get the number of identifier parts in the parsed identifier name
-     *
-     * @return int The number of identifer name parts
-     */
-    public function count()
+    public function count(): int
     {
         return $this->getNumParts();
     }
